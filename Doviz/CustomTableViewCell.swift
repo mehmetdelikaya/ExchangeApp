@@ -11,7 +11,10 @@ import UIKit
 class CustomTableViewCell: UITableViewCell {
 
     
+    @IBOutlet weak var sellingPrice: UILabel!
+    @IBOutlet weak var buyingPrice: UILabel!
     @IBOutlet weak var label: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

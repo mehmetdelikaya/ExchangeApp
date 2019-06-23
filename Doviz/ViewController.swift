@@ -18,15 +18,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let text = data[indexPath.row]
         cell.label?.text = text
+        cell.buyingPrice?.text = "Alış : 7.45"
+        cell.sellingPrice?.text = "Satış : 7.47"
         
         if indexPath.row % 2 == 0{
-            cell.contentView.backgroundColor = UIColor.orange
+            cell.contentView.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
         } else {
-            cell.contentView.backgroundColor = UIColor.blue
+            cell.contentView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         }
         
         return cell
-    } 
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let alertController = UIAlertController(title: "Hint", message: "You have selected row \(indexPath.row)", preferredStyle: .alert)
