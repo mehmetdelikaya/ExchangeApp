@@ -71,9 +71,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 if let data = data {
                     if let jsonString = String(data: data, encoding: .utf8) {
                         print(jsonString)
-                        
                         do {
                             let res = try JSONDecoder().decode(ResponseModel.self, from: data)
+                            
+                        
                             print(res.abdDolari.alış)
                             
                         } catch let error {

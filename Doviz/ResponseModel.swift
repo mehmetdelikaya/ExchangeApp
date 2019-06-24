@@ -15,20 +15,19 @@ import Foundation
 
 // MARK: - ResponseModel
 struct ResponseModel: Codable {
-    let güncellemeTarihi: String
+    
     let abdDolari, avustralyaDolari, dani̇markaKronu, euro: PuneHedgehog
     let i̇ngi̇li̇zSterli̇ni̇, i̇svi̇çreFrangi, i̇sveçKronu, kanadaDolari: PuneHedgehog
     let kuveytDi̇nari, norveçKronu, suudi̇Arabi̇stanRi̇yali̇, japonYeni̇: PuneHedgehog
     let bulgarLevasi, rumenLeyi̇, rusRublesi̇, i̇ranRi̇yali̇: PuneHedgehog
     let çi̇nYuani, paki̇stanRupi̇si̇, katarRi̇yali̇: PuneHedgehog
-    let özelÇekmeHakkiSDR: ÖzelÇekmeHakkiSDR
     let çeyrekAltın, yarımAltın, tamAltın, cumhuriyetAltını: PuneHedgehog
     let ons, gramAltın, ataAltın, the14AyarAltın: PuneHedgehog
     let the18AyarAltın, the22AyarBilezik, i̇kibuçukAltın, beşliAltın: PuneHedgehog
     let gremseAltın, gümüş: PuneHedgehog
     
     enum CodingKeys: String, CodingKey {
-        case güncellemeTarihi = "Güncelleme Tarihi"
+    
         case abdDolari = "ABD DOLARI"
         case avustralyaDolari = "AVUSTRALYA DOLARI"
         case dani̇markaKronu = "DANİMARKA KRONU"
@@ -48,7 +47,6 @@ struct ResponseModel: Codable {
         case çi̇nYuani = "ÇİN YUANI"
         case paki̇stanRupi̇si̇ = "PAKİSTAN RUPİSİ"
         case katarRi̇yali̇ = "KATAR RİYALİ"
-        case özelÇekmeHakkiSDR = "ÖZEL ÇEKME HAKKI (SDR)                            "
         case çeyrekAltın = "Çeyrek Altın"
         case yarımAltın = "Yarım Altın"
         case tamAltın = "Tam Altın"
@@ -104,8 +102,8 @@ class JSONNull: Codable, Hashable {
         return true
     }
     
-    public var hashValue: Int {
-        return 0
+    func hash(into hasher: inout Hasher){
+        hasher.combine(0)
     }
     
     public init() {}
