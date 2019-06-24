@@ -13,6 +13,7 @@
 		B3604BED22BD1D4B00D8931D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3604BEC22BD1D4B00D8931D /* Assets.xcassets */; };
 		B3604BF022BD1D4B00D8931D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3604BEE22BD1D4B00D8931D /* LaunchScreen.storyboard */; };
 		B3604BF922C0287B00D8931D /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3604BF822C0287B00D8931D /* CustomTableViewCell.swift */; };
+		B3604BFB22C0451800D8931D /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3604BFA22C0451800D8931D /* ResponseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		B3604BEF22BD1D4B00D8931D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3604BF122BD1D4B00D8931D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3604BF822C0287B00D8931D /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		B3604BFA22C0451800D8931D /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				B3604BE722BD1D4800D8931D /* ViewController.swift */,
+				B3604BFA22C0451800D8931D /* ResponseModel.swift */,
 				B3604BF822C0287B00D8931D /* CustomTableViewCell.swift */,
 				B3604BE922BD1D4800D8931D /* Main.storyboard */,
 				B3604BF722BD1E2900D8931D /* Supporting Files */,
@@ -148,6 +151,7 @@
 			files = (
 				B3604BF922C0287B00D8931D /* CustomTableViewCell.swift in Sources */,
 				B3604BE822BD1D4800D8931D /* ViewController.swift in Sources */,
+				B3604BFB22C0451800D8931D /* ResponseModel.swift in Sources */,
 				B3604BE622BD1D4800D8931D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

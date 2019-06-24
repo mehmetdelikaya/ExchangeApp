@@ -47,10 +47,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+         getExchangeRates()
+        
         for i in 0...100{
             data.append("\(i)")
         }
-        
+       
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -59,5 +61,32 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return 1
     }
     
+    
+    func getExchangeRates(){
+        let requestURL = URL(string: "https://finans.truncgil.com/today.json")!
+        
+        let task = URLSession.shared.dataTask(with: requestURL) {data,response,error in
+            
+            if error == nil {
+                if let data = data {
+                    if let jsonString = String(data: data, encoding: .utf8) {
+                        print(jsonString)
+                        
+                        do {
+                            let res = try JSONDecoder().decode(ResponseModel.self, from: data)
+                            print(res.abdDolari.alış)
+                            
+                        } catch let error {
+                            print(error)
+                        }
+                    }
+                }
+            }
+            
+        }
+        task.resume()
+        
+        
+    }
 }
 
