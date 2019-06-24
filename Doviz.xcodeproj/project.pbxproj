@@ -14,6 +14,8 @@
 		B3604BF022BD1D4B00D8931D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3604BEE22BD1D4B00D8931D /* LaunchScreen.storyboard */; };
 		B3604BF922C0287B00D8931D /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3604BF822C0287B00D8931D /* CustomTableViewCell.swift */; };
 		B3604BFB22C0451800D8931D /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3604BFA22C0451800D8931D /* ResponseModel.swift */; };
+		B3604BFD22C1169200D8931D /* ListModelConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3604BFC22C1169200D8931D /* ListModelConverter.swift */; };
+		B3604BFF22C122A900D8931D /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3604BFE22C122A900D8931D /* ListModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		B3604BF122BD1D4B00D8931D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3604BF822C0287B00D8931D /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		B3604BFA22C0451800D8931D /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
+		B3604BFC22C1169200D8931D /* ListModelConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModelConverter.swift; sourceTree = "<group>"; };
+		B3604BFE22C122A900D8931D /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,8 @@
 				B3604BE922BD1D4800D8931D /* Main.storyboard */,
 				B3604BF722BD1E2900D8931D /* Supporting Files */,
 				B3604BF122BD1D4B00D8931D /* Info.plist */,
+				B3604BFC22C1169200D8931D /* ListModelConverter.swift */,
+				B3604BFE22C122A900D8931D /* ListModel.swift */,
 			);
 			path = Doviz;
 			sourceTree = "<group>";
@@ -152,7 +158,9 @@
 				B3604BF922C0287B00D8931D /* CustomTableViewCell.swift in Sources */,
 				B3604BE822BD1D4800D8931D /* ViewController.swift in Sources */,
 				B3604BFB22C0451800D8931D /* ResponseModel.swift in Sources */,
+				B3604BFF22C122A900D8931D /* ListModel.swift in Sources */,
 				B3604BE622BD1D4800D8931D /* AppDelegate.swift in Sources */,
+				B3604BFD22C1169200D8931D /* ListModelConverter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,16 +10,16 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return listExchangeData?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellReuseIdentifier") as! CustomTableViewCell
         
-        let text = data[indexPath.row]
-        cell.label?.text = text
-        cell.buyingPrice?.text = "Alış : 7.45"
-        cell.sellingPrice?.text = "Satış : 7.47"
+        let item = listExchangeData![indexPath.row]
+        cell.label?.text = item.name
+        cell.buyingPrice?.text = "Alış : \(item.buying ?? "")"
+        cell.sellingPrice?.text = "Satış : \(item.selling ?? "")"
         
         if indexPath.row % 2 == 0{
             cell.contentView.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
@@ -41,24 +41,36 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     @IBOutlet weak var tableView: UITableView!
-    private var data : [String] = []
+    
+    private var listExchangeData : [ListModel]?
+    private var exchangeResponse : ResponseModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        prepareList()
+        getExchangeRates()
         
-         getExchangeRates()
         
-        for i in 0...100{
-            data.append("\(i)")
-        }
-       
-        tableView.dataSource = self
-        tableView.delegate = self
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+    
+    func prepareList(){
+       
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
+    
+    func prepareListData(){
+        
+        let listModel = ListModelConverter.init(model: exchangeResponse!)
+        listExchangeData = listModel.getListArray()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     
@@ -72,10 +84,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     if let jsonString = String(data: data, encoding: .utf8) {
                         print(jsonString)
                         do {
-                            let res = try JSONDecoder().decode(ResponseModel.self, from: data)
+                            self.exchangeResponse = try JSONDecoder().decode(ResponseModel.self, from: data)
                             
-                        
-                            print(res.abdDolari.alış)
+                            print(self.exchangeResponse?.abdDolari.alış ?? "NONE")
+                            self.prepareListData()
+                            
+                            
                             
                         } catch let error {
                             print(error)
