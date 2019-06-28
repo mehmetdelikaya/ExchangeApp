@@ -21,6 +21,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.buyingPrice?.text = "Alış : \(item.buying ?? "")"
         cell.sellingPrice?.text = "Satış : \(item.selling ?? "")"
         
+        cell.layer.cornerRadius = 6
+        cell.clipsToBounds = true
+       
         if indexPath.row % 2 == 0{
             cell.contentView.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
         } else {
