@@ -14,12 +14,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellReuseIdentifier") as! CustomTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellReuseIdentifier") as! CustomizedCells
         
         let item = listExchangeData![indexPath.row]
-        cell.label?.text = item.name
-        cell.buyingPrice?.text = "Alış : \(item.buying ?? "")"
-        cell.sellingPrice?.text = "Satış : \(item.selling ?? "")"
+        cell.labelCurrencyFullName?.text = item.name
+        cell.labelCurrencyShortCode?.text = item.name
+        cell.labelBuyingPrice?.text = "Alış : \(item.buying ?? "")"
+        cell.labelSellingPrice?.text = "Satış : \(item.selling ?? "")"
+        cell.imgCountryFlag?.image = UIImage(named: "GB")
         
         cell.layer.cornerRadius = 6
         cell.clipsToBounds = true
@@ -42,8 +44,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
-    
     @IBOutlet weak var tableView: UITableView!
+    
     
     private var listExchangeData : [ListModel]?
     private var exchangeResponse : ResponseModel?
@@ -65,6 +67,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
        
         tableView.dataSource = self
         tableView.delegate = self
+        self.tableView.rowHeight = 76.0
+        tableView.register(UINib.init(nibName: "CustomizedCells", bundle: nil), forCellReuseIdentifier: "cellReuseIdentifier")
     }
     
     func prepareListData(){

@@ -1,19 +1,21 @@
 //
-//  CustomTableViewCell.swift
+//  CustomizedCells.swift
 //  Doviz
 //
-//  Created by Mehmet Delikaya on 24.06.2019.
+//  Created by Mehmet Delikaya on 1.07.2019.
 //  Copyright © 2019 Mehmet Delikaya. All rights reserved.
 //
 
 import UIKit
 
-class CustomTableViewCell: UITableViewCell {
+class CustomizedCells: UITableViewCell {
 
+    @IBOutlet weak var imgCountryFlag: UIImageView!
+    @IBOutlet weak var labelCurrencyShortCode: UILabel!
+    @IBOutlet weak var labelCurrencyFullName: UILabel!
+    @IBOutlet weak var labelBuyingPrice: UILabel!
+    @IBOutlet weak var labelSellingPrice: UILabel!
     
-    @IBOutlet weak var sellingPrice: UILabel!
-    @IBOutlet weak var buyingPrice: UILabel!
-    @IBOutlet weak var label: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,5 +27,5 @@ class CustomTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }
