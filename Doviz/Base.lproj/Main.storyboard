@@ -8,6 +8,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="JosefinSans-Regular.ttf">
+            <string>JosefinSans-Regular</string>
+        </array>
+        <array key="JosefinSans-SemiBold.ttf">
+            <string>JosefinSans-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -18,25 +26,85 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dsf-gq-g2X">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="199" width="414" height="663"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R87-6z-kdi">
+                                <rect key="frame" x="0.0" y="44" width="414" height="155"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Güncelleme Tarihi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhg-US-Nts">
+                                        <rect key="frame" x="141" y="32" width="132" height="16"/>
+                                        <fontDescription key="fontDescription" name="JosefinSans-SemiBold" family="Josefin Sans" pointSize="16"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.97999999999999998" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pei-rF-V6l">
+                                        <rect key="frame" x="13" y="97" width="36" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="36" id="ISk-lo-jhx"/>
+                                            <constraint firstAttribute="height" constant="36" id="QlL-z3-ZRT"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P8i-Yi-IUe">
+                                        <rect key="frame" x="69" y="107" width="23" height="18"/>
+                                        <fontDescription key="fontDescription" name="JosefinSans-SemiBold" family="Josefin Sans" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turkish Lira ₺" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4C-gi-bS1">
+                                        <rect key="frame" x="306" y="119" width="88" height="14"/>
+                                        <fontDescription key="fontDescription" name="JosefinSans-Regular" family="Josefin Sans" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sA5-tf-5aE">
+                                        <rect key="frame" x="362" y="99" width="32" height="20"/>
+                                        <fontDescription key="fontDescription" name="JosefinSans-Regular" family="Josefin Sans" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.10980392156862745" green="0.10980392156862745" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="V4C-gi-bS1" secondAttribute="bottom" constant="22" id="2Xw-dy-0Ff"/>
+                                    <constraint firstAttribute="bottom" secondItem="P8i-Yi-IUe" secondAttribute="bottom" constant="30" id="BuE-pt-eVQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="V4C-gi-bS1" secondAttribute="trailing" constant="20" id="C25-RS-ok5"/>
+                                    <constraint firstItem="Pei-rF-V6l" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="R87-6z-kdi" secondAttribute="bottom" id="CbG-3o-Bun"/>
+                                    <constraint firstItem="uhg-US-Nts" firstAttribute="centerX" secondItem="R87-6z-kdi" secondAttribute="centerX" id="HgI-iP-l8w"/>
+                                    <constraint firstAttribute="height" constant="155" id="IaI-8p-cx2"/>
+                                    <constraint firstItem="V4C-gi-bS1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="P8i-Yi-IUe" secondAttribute="trailing" constant="8" symbolic="YES" id="O4q-n9-e2S"/>
+                                    <constraint firstItem="P8i-Yi-IUe" firstAttribute="leading" secondItem="Pei-rF-V6l" secondAttribute="trailing" constant="20" id="Tpg-xi-zVj"/>
+                                    <constraint firstItem="uhg-US-Nts" firstAttribute="top" secondItem="R87-6z-kdi" secondAttribute="top" constant="32" id="WLs-oR-ig2"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="P8i-Yi-IUe" secondAttribute="trailing" constant="20" symbolic="YES" id="bp1-dr-iCS"/>
+                                    <constraint firstItem="Pei-rF-V6l" firstAttribute="leading" secondItem="R87-6z-kdi" secondAttribute="leading" constant="13" id="p7g-bb-hqb"/>
+                                    <constraint firstAttribute="trailing" secondItem="sA5-tf-5aE" secondAttribute="trailing" constant="20" id="vnK-ol-QUQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Pei-rF-V6l" secondAttribute="bottom" constant="22" id="wVu-lo-qeF"/>
+                                    <constraint firstItem="sA5-tf-5aE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="P8i-Yi-IUe" secondAttribute="trailing" constant="8" symbolic="YES" id="yH5-O1-BmJ"/>
+                                    <constraint firstItem="V4C-gi-bS1" firstAttribute="top" secondItem="sA5-tf-5aE" secondAttribute="bottom" id="yZG-Wu-ySy"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Dsf-gq-g2X" secondAttribute="trailing" id="8ne-Lu-Gnb"/>
+                            <constraint firstItem="R87-6z-kdi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LtB-Hz-xTG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Dsf-gq-g2X" secondAttribute="bottom" id="POA-fu-wVX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="R87-6z-kdi" secondAttribute="trailing" id="hAE-Pk-9Ix"/>
+                            <constraint firstItem="R87-6z-kdi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="mKQ-6D-Ucm"/>
                             <constraint firstItem="Dsf-gq-g2X" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tjW-ld-YTq"/>
-                            <constraint firstItem="Dsf-gq-g2X" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xij-xn-G9w"/>
+                            <constraint firstItem="Dsf-gq-g2X" firstAttribute="top" secondItem="R87-6z-kdi" secondAttribute="bottom" id="w7d-De-gsC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="imgExistingFlag" destination="Pei-rF-V6l" id="keF-AN-vzt"/>
+                        <outlet property="labelUpdateDate" destination="uhg-US-Nts" id="d2C-D9-hwX"/>
                         <outlet property="tableView" destination="Dsf-gq-g2X" id="DjF-Qz-6Vc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="47.826086956521742" y="20.758928571428569"/>
         </scene>
     </scenes>
 </document>

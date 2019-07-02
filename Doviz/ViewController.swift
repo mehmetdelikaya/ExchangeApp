@@ -68,6 +68,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     
+    @IBOutlet weak var labelUpdateDate: UILabel!
+    @IBOutlet weak var imgExistingFlag: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     private var listExchangeData : [ListModel]?
     private var exchangeResponse : ResponseModel?
@@ -99,7 +101,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         listExchangeData = listModel.getListArray()
         DispatchQueue.main.async {
             self.tableView.reloadData()
+            self.imgExistingFlag.image = UIImage(named: "TR")
         }
+        
     }
     
     
