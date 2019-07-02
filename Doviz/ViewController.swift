@@ -26,13 +26,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.labelBuyingPrice?.text = "Alış : \(item.buying ?? "")"
         cell.labelSellingPrice?.text = "Satış : \(item.selling ?? "")"
         
-        
         if let flagName = item.imageName{
+            cell.imgCountryFlag.isHidden = false
             cell.imgCountryFlag.image = UIImage(named: flagName)
         }else{
             cell.imgCountryFlag.isHidden = true
+            //cell.imgCountryFlag.removeFromSuperview()
         }
-        //cell.imgCountryFlag?.image = UIImage(named: item.imageName ?? cell.imgCountryFlag.isHidden=true)
         
         cell.layer.cornerRadius = 6
         cell.clipsToBounds = true
