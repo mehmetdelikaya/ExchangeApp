@@ -10,13 +10,17 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return listExchangeData?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellReuseIdentifier") as! CustomizedCells
         
-        let item = listExchangeData![indexPath.row]
+        let item = listExchangeData![indexPath.section]
         cell.labelCurrencyFullName?.text = item.name
         cell.labelCurrencyShortCode?.text = item.name
         cell.labelBuyingPrice?.text = "Alış : \(item.buying ?? "")"
@@ -26,11 +30,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.layer.cornerRadius = 6
         cell.clipsToBounds = true
        
-        if indexPath.row % 2 == 0{
+        /*if indexPath.section % 2 == 0{
             cell.contentView.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
         } else {
             cell.contentView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        }
+        }*/
         
         return cell
     }
@@ -44,11 +48,30 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
+    /*func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRect(x:0, y:0, width: tableView.frame.size.width, height: 18))
+        let label = UILabel(frame: CGRect(x:10, y:5, width: tableView.frame.size.width, height: 18))
+       
+        label.backgroundColor = #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        view.addSubview(label)
+        
+        
+        return view
+    }*/
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 22.0
+    }
+    
+    
+    
+    
+    
     @IBOutlet weak var tableView: UITableView!
-    
-    
     private var listExchangeData : [ListModel]?
     private var exchangeResponse : ResponseModel?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,10 +80,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         getExchangeRates()
         
         
-    }
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
     }
     
     func prepareList(){
