@@ -67,7 +67,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
        
         tableView.dataSource = self
         tableView.delegate = self
-        self.tableView.rowHeight = 76.0
+        
+        //self.tableView.rowHeight = UITableView.automaticDimension
+        //self.tableView.estimatedRowHeight = 126.0
+        
         tableView.register(UINib.init(nibName: "CustomizedCells", bundle: nil), forCellReuseIdentifier: "cellReuseIdentifier")
     }
     
