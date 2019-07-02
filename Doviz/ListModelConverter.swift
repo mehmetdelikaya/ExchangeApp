@@ -19,114 +19,133 @@ class ListModelConverter {
         listModel.name = "ABD DOLARI"
         listModel.buying = toModel.abdDolari.alış
         listModel.selling = toModel.abdDolari.satış
+        listModel.imageName = "US"
         self.listArray.append(listModel)
         
         listModel = ListModel()
         listModel.name = "EURO"
         listModel.buying = toModel.euro.alış
         listModel.selling = toModel.euro.satış
+        listModel.imageName = "EU"
         self.listArray.append(listModel)
         
         listModel = ListModel()
         listModel.name = "İNGİLİZ STERLİNİ"
         listModel.buying = toModel.i̇ngi̇li̇zSterli̇ni̇.alış
         listModel.selling = toModel.i̇ngi̇li̇zSterli̇ni̇.satış
+        listModel.imageName = "GB"
         self.listArray.append(listModel)
         
         listModel = ListModel()
         listModel.name = "KANADA DOLARI"
         listModel.buying = toModel.kanadaDolari.alış
         listModel.selling = toModel.kanadaDolari.satış
+        listModel.imageName = "CA"
         self.listArray.append(listModel)
         
         listModel = ListModel()
         listModel.name = "AVUSTRALYA DOLARI"
         listModel.buying = toModel.avustralyaDolari.alış
         listModel.selling = toModel.avustralyaDolari.satış
+        listModel.imageName = "AU"
         self.listArray.append(listModel)
         
         listModel = ListModel()
         listModel.name = "DANİMARKA KRONU"
         listModel.buying = toModel.dani̇markaKronu.alış
         listModel.selling = toModel.dani̇markaKronu.satış
+        listModel.imageName = "DK"
         self.listArray.append(listModel)
         
         listModel = ListModel()
         listModel.name = "JAPON YENİ"
         listModel.buying = toModel.japonYeni̇.alış
         listModel.selling = toModel.japonYeni̇.satış
+        listModel.imageName = "JP"
         self.listArray.append(listModel)
         
         listModel = ListModel()
         listModel.name = "İSVEÇ KRONU"
         listModel.buying = toModel.i̇sveçKronu.alış
         listModel.selling = toModel.i̇sveçKronu.satış
+        listModel.imageName = "SE"
         self.listArray.append(listModel)
         
         listModel = ListModel()
         listModel.name = "İSVİÇRE FRANGI"
         listModel.buying = toModel.i̇svi̇çreFrangi.alış
         listModel.selling = toModel.i̇svi̇çreFrangi.satış
+        listModel.imageName = "CH"
         self.listArray.append(listModel)
         
         listModel = ListModel()
         listModel.name = "KATAR RİYALİ"
         listModel.buying = toModel.katarRi̇yali̇.alış
         listModel.selling = toModel.katarRi̇yali̇.satış
+        listModel.imageName = "QA"
         self.listArray.append(listModel)
         
         listModel = ListModel()
         listModel.name = "KUVEYT DİNARI"
         listModel.buying = toModel.kuveytDi̇nari.alış
         listModel.selling = toModel.kuveytDi̇nari.satış
+        listModel.imageName = "KW"
         self.listArray.append(listModel)
         
         listModel = ListModel()
         listModel.name = "NORVEÇ KRONU"
         listModel.buying = toModel.norveçKronu.alış
         listModel.selling = toModel.norveçKronu.satış
+        listModel.imageName = "NO"
         self.listArray.append(listModel)
         
         listModel = ListModel()
         listModel.name = "ÇİN YUANI"
         listModel.buying = toModel.çi̇nYuani.alış
         listModel.selling = toModel.çi̇nYuani.satış
+        listModel.imageName = "CN"
         self.listArray.append(listModel)
         
         listModel = ListModel()
         listModel.name = "BULGAR LEVASI"
         listModel.buying = toModel.bulgarLevasi.alış
         listModel.selling = toModel.bulgarLevasi.satış
+        listModel.imageName = "BG"
         self.listArray.append(listModel)
         
         listModel = ListModel()
         listModel.name = "İRAN RİYALİ"
         listModel.buying = toModel.i̇ranRi̇yali̇.alış
         listModel.selling = toModel.i̇ranRi̇yali̇.satış
+        listModel.imageName = "IR"
         self.listArray.append(listModel)
         
         listModel = ListModel()
         listModel.name = "PAKİSTAN RUPİSİ"
         listModel.buying = toModel.paki̇stanRupi̇si̇.alış
         listModel.selling = toModel.paki̇stanRupi̇si̇.satış
+        listModel.imageName = "PK"
         self.listArray.append(listModel)
         
         listModel = ListModel()
         listModel.name = "RUMEN LEYİ"
         listModel.buying = toModel.rumenLeyi̇.alış
         listModel.selling = toModel.rumenLeyi̇.satış
+        listModel.imageName = "RO"
         self.listArray.append(listModel)
         
         listModel = ListModel()
         listModel.name = "RUS RUBLESİ"
         listModel.buying = toModel.rusRublesi̇.alış
         listModel.selling = toModel.rusRublesi̇.satış
+        listModel.imageName = "RU"
         self.listArray.append(listModel)
         
         listModel = ListModel()
         listModel.name = "SUUDİ ARABİSTAN RİYALİ"
         listModel.buying = toModel.suudi̇Arabi̇stanRi̇yali̇.alış
         listModel.selling = toModel.suudi̇Arabi̇stanRi̇yali̇.satış
+        listModel.imageName = "SA"
         self.listArray.append(listModel)
         
         listModel = ListModel()

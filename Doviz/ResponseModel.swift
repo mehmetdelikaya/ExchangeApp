@@ -15,7 +15,7 @@ import Foundation
 
 // MARK: - ResponseModel
 struct ResponseModel: Codable {
-    
+    let güncellemeTarihi: String
     let abdDolari, avustralyaDolari, dani̇markaKronu, euro: PuneHedgehog
     let i̇ngi̇li̇zSterli̇ni̇, i̇svi̇çreFrangi, i̇sveçKronu, kanadaDolari: PuneHedgehog
     let kuveytDi̇nari, norveçKronu, suudi̇Arabi̇stanRi̇yali̇, japonYeni̇: PuneHedgehog
@@ -27,7 +27,7 @@ struct ResponseModel: Codable {
     let gremseAltın, gümüş: PuneHedgehog
     
     enum CodingKeys: String, CodingKey {
-    
+        case güncellemeTarihi = "Güncelleme Tarihi"
         case abdDolari = "ABD DOLARI"
         case avustralyaDolari = "AVUSTRALYA DOLARI"
         case dani̇markaKronu = "DANİMARKA KRONU"

@@ -25,7 +25,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.labelCurrencyShortCode?.text = item.name
         cell.labelBuyingPrice?.text = "Alış : \(item.buying ?? "")"
         cell.labelSellingPrice?.text = "Satış : \(item.selling ?? "")"
-        cell.imgCountryFlag?.image = UIImage(named: "GB")
+        
+        
+        if let flagName = item.imageName{
+            cell.imgCountryFlag.image = UIImage(named: flagName)
+        }else{
+            cell.imgCountryFlag.isHidden = true
+        }
+        //cell.imgCountryFlag?.image = UIImage(named: item.imageName ?? cell.imgCountryFlag.isHidden=true)
         
         cell.layer.cornerRadius = 6
         cell.clipsToBounds = true
@@ -102,6 +109,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         DispatchQueue.main.async {
             self.tableView.reloadData()
             self.imgExistingFlag.image = UIImage(named: "TR")
+            self.labelUpdateDate.text = "Güncelleme tarihi: \(self.exchangeResponse?.güncellemeTarihi ?? "")"
         }
         
     }

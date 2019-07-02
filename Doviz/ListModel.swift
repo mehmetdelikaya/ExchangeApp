@@ -15,6 +15,7 @@ class ListModel{
     var buying : String?
     var selling : String?
     var type : String?
+    var imageName : String?
     
     init(){
         
