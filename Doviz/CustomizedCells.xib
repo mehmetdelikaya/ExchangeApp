@@ -43,6 +43,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </stackView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="t7f-Ck-Dka">
                         <rect key="frame" x="195" y="5" width="142" height="65.5"/>
@@ -66,9 +67,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </stackView>
                 </subviews>
-                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="t7f-Ck-Dka" secondAttribute="trailing" constant="6" id="9Bn-5E-hfZ"/>
                     <constraint firstAttribute="bottom" secondItem="t7f-Ck-Dka" secondAttribute="bottom" constant="5" id="Cjh-yj-OYX"/>
@@ -79,6 +81,7 @@
                     <constraint firstItem="H6g-Z6-POo" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="mfk-kd-q3V"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="imgCountryFlag" destination="Ije-7f-nlc" id="7s9-XV-mUd"/>

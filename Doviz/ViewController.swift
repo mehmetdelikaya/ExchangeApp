@@ -31,11 +31,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell.imgCountryFlag.image = UIImage(named: flagName)
         }else{
             cell.imgCountryFlag.isHidden = true
-            //cell.imgCountryFlag.removeFromSuperview()
         }
         
         cell.layer.cornerRadius = 6
         cell.clipsToBounds = true
+        
+        cell.layer.borderWidth = 1
+        cell.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1)
+        
+       
        
         /*if indexPath.section % 2 == 0{
             cell.contentView.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
@@ -72,9 +76,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     
-    
-    
-    
     @IBOutlet weak var labelUpdateDate: UILabel!
     @IBOutlet weak var imgExistingFlag: UIImageView!
     @IBOutlet weak var tableView: UITableView!
@@ -95,6 +96,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
        
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.separatorStyle = .none
+        
         
         //self.tableView.rowHeight = UITableView.automaticDimension
         //self.tableView.estimatedRowHeight = 126.0
