@@ -10,7 +10,7 @@ import UIKit
 
 class CustomizedCells: UITableViewCell {
 
-    @IBOutlet weak var imgCountryFlag: UIImageView!
+    @IBOutlet weak var imgCountryFlag: UIImageView! 
     @IBOutlet weak var labelCurrencyShortCode: UILabel!
     @IBOutlet weak var labelCurrencyFullName: UILabel!
     @IBOutlet weak var labelBuyingPrice: UILabel!
