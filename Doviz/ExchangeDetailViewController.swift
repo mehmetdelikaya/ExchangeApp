@@ -24,13 +24,26 @@ class ExchangeDetailViewController: UIViewController {
         }else{
             imgSelected.isHidden = true
         }
+        
+        
+        let gestureSwift2AndHigher = UITapGestureRecognizer(target: self, action:  #selector (self.tapped (_:)))
+        self.viewBack.addGestureRecognizer(gestureSwift2AndHigher)
+        
+
     }
     
+    
+    @IBOutlet weak var viewBack: UIView!
     @IBOutlet weak var imgSelected: UIImageView!
     @IBOutlet weak var labelSelectedCurrency: UILabel!
     @IBOutlet weak var textViewAmount: UITextView!
     
     var listItem : ListModel?
+   
+    @objc func tapped(_ sender:UITapGestureRecognizer){
+        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
+    }
     
     /*
     // MARK: - Navigation
