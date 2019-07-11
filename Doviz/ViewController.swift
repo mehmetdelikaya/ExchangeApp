@@ -51,12 +51,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let alertController = UIAlertController(title: "Hint", message: "You have selected row \(indexPath.row)", preferredStyle: .alert)
+        /*let alertController = UIAlertController(title: "Hint", message: "You have selected row \(indexPath.row)", preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alertController.addAction(alertAction)
         
-        self.present(alertController,animated: true,completion: nil)
-        
+        self.present(alertController,animated: true,completion: nil)*/
+        self.performSegue(withIdentifier: "SendDataSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? ExchangeDetailViewController{
+            destination.listItem = listExchangeData![(tableView.indexPathForSelectedRow?.section)!]
+            tableView.deselectRow(at: tableView.indexPathForSelectedRow!, animated: true)
+        }
     }
     
     /*func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
