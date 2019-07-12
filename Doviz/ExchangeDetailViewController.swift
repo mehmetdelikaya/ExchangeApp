@@ -10,14 +10,48 @@ import UIKit
 
 class ExchangeDetailViewController: UIViewController {
 
+    @IBAction func buttonCalculate(_ sender: Any) {
+        calculate(option: shouldMultiply)
+    }
+    @IBAction func buttonReverse(_ sender: Any) {
+        reverse()
+    }
+    @IBOutlet weak var viewBack: UIView!
+    @IBOutlet weak var imgSelected: UIImageView!
+    @IBOutlet weak var labelSelectedCurrency: UILabel!
+    @IBOutlet weak var textViewAmount: UITextView!
+    @IBOutlet weak var labelCurrencyName: UILabel!
+    
+    @IBOutlet weak var labelTargetSelling: UILabel!
+    @IBOutlet weak var labelTargetBuying: UILabel!
+    @IBOutlet weak var imgTarget: UIImageView!
+    var listItem : ListModel?
+    var shouldMultiply = true
+    
+    @objc func tapped(_ sender:UITapGestureRecognizer){
+        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-
         view.addGestureRecognizer(tap)
         
+        let gestureSwift2AndHigher = UITapGestureRecognizer(target: self, action:  #selector (self.tapped (_:)))
+        self.viewBack.addGestureRecognizer(gestureSwift2AndHigher)
+      
+        prepareInitial()
+        calculate(option: shouldMultiply)
+    }
+    
+    func prepareInitial(){
         labelSelectedCurrency.text = listItem?.name
         labelCurrencyName.text = listItem?.name
         
@@ -27,21 +61,7 @@ class ExchangeDetailViewController: UIViewController {
         }else{
             imgSelected.isHidden = true
         }
-        
-        
-        let gestureSwift2AndHigher = UITapGestureRecognizer(target: self, action:  #selector (self.tapped (_:)))
-        self.viewBack.addGestureRecognizer(gestureSwift2AndHigher)
-        
         imgTarget.image = UIImage(named: "TR")
-
-        
-        calculate(option: shouldMultiply)
-        
-    
-    }
-    @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
     }
     
     func calculate(option shouldMultiply: Bool){
@@ -65,56 +85,27 @@ class ExchangeDetailViewController: UIViewController {
         
     }
     
-    var shouldMultiply = true
-    
     func reverse(){
-        
         shouldMultiply = !shouldMultiply
         
-        labelSelectedCurrency.text = "Turkish Liras"
-        labelCurrencyName.text = "Turkish Liras"
-        imgSelected.image = UIImage(named: "TR")
-        
-        if let flagName = listItem?.imageName{
-             imgTarget.isHidden = false
-             imgTarget.image = UIImage(named: flagName)
+        if shouldMultiply {
+            
+            prepareInitial()
+            
         }else{
-             imgTarget.isHidden = true
+            labelSelectedCurrency.text = "Turkish Liras"
+            labelCurrencyName.text = "Turkish Liras"
+            imgSelected.image = UIImage(named: "TR")
+            
+            if let flagName = listItem?.imageName{
+                imgTarget.isHidden = false
+                imgTarget.image = UIImage(named: flagName)
+            }else{
+                imgTarget.isHidden = true
+            }
         }
         
+        
         calculate(option: shouldMultiply)
     }
-    
-    @IBAction func buttonCalculate(_ sender: Any) {
-        calculate(option: shouldMultiply)
-    }
-    @IBAction func buttonReverse(_ sender: Any) {
-        reverse()
-    }
-    @IBOutlet weak var viewBack: UIView!
-    @IBOutlet weak var imgSelected: UIImageView!
-    @IBOutlet weak var labelSelectedCurrency: UILabel!
-    @IBOutlet weak var textViewAmount: UITextView!
-    @IBOutlet weak var labelCurrencyName: UILabel!
-    
-    @IBOutlet weak var labelTargetSelling: UILabel!
-    @IBOutlet weak var labelTargetBuying: UILabel!
-    @IBOutlet weak var imgTarget: UIImageView!
-    var listItem : ListModel?
-   
-    @objc func tapped(_ sender:UITapGestureRecognizer){
-        self.navigationController?.popViewController(animated: true)
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
