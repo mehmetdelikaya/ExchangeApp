@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -94,8 +95,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         prepareList()
-        getExchangeRates()
-        
+        //getExchangeRates()
+        getExchangeRatesWithAlamofire()
         
     }
     
@@ -124,6 +125,29 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
+    func getExchangeRatesWithAlamofire(){
+         let requestURLString = "https://finans.truncgil.com/today.json"
+        
+        Alamofire.request(requestURLString)
+            .responseJSON { (response) in
+                if let data = response.data{
+                    if let jsonString = String(data: data, encoding: .utf8) {
+                        print(jsonString)
+                        do {
+                            self.exchangeResponse = try JSONDecoder().decode(ResponseModel.self, from: data)
+                            
+                            print(self.exchangeResponse?.abdDolari.alış ?? "NONE")
+                            self.prepareListData()
+                            
+                            
+                            
+                        } catch let error {
+                            print(error)
+                        }
+                    }
+                }
+        }
+    }
     
     func getExchangeRates(){
         let requestURL = URL(string: "https://finans.truncgil.com/today.json")!
