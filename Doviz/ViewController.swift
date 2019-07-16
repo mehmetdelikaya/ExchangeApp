@@ -57,7 +57,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         alertController.addAction(alertAction)
         
         self.present(alertController,animated: true,completion: nil)*/
-        self.performSegue(withIdentifier: "SendDataSegue", sender: self)
+        if indexPath.section<19{
+         self.performSegue(withIdentifier: "SendDataSegue", sender: self)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
