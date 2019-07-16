@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E88038287C95AE8E9128EC2 /* Pods_Doviz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7533D4215DD40EF4B0838E6 /* Pods_Doviz.framework */; };
 		B3322B1F22CA249000F63CC2 /* CustomizedCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3322B1D22CA249000F63CC2 /* CustomizedCells.swift */; };
 		B3322B2022CA249000F63CC2 /* CustomizedCells.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3322B1E22CA249000F63CC2 /* CustomizedCells.xib */; };
 		B3322B2D22CA56B900F63CC2 /* JosefinSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3322B2C22CA56B900F63CC2 /* JosefinSans-Regular.ttf */; };
@@ -23,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F47B97E4F09379792387FB0 /* Pods-Doviz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doviz.debug.xcconfig"; path = "Target Support Files/Pods-Doviz/Pods-Doviz.debug.xcconfig"; sourceTree = "<group>"; };
+		2F599E0E79AAFA5EE03E3329 /* Pods-Doviz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doviz.release.xcconfig"; path = "Target Support Files/Pods-Doviz/Pods-Doviz.release.xcconfig"; sourceTree = "<group>"; };
+		A7533D4215DD40EF4B0838E6 /* Pods_Doviz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doviz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3322B1D22CA249000F63CC2 /* CustomizedCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedCells.swift; sourceTree = "<group>"; };
 		B3322B1E22CA249000F63CC2 /* CustomizedCells.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomizedCells.xib; sourceTree = "<group>"; };
 		B3322B2C22CA56B900F63CC2 /* JosefinSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Regular.ttf"; sourceTree = "<group>"; };
@@ -45,12 +49,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E88038287C95AE8E9128EC2 /* Pods_Doviz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A169569D721D619F5C8C7FC5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A7533D4215DD40EF4B0838E6 /* Pods_Doviz.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B3322B2722CA3AE200F63CC2 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +78,8 @@
 			children = (
 				B3604BE422BD1D4800D8931D /* Doviz */,
 				B3604BE322BD1D4800D8931D /* Products */,
+				C2B95813E81E6F8054CA6DDD /* Pods */,
+				A169569D721D619F5C8C7FC5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +119,16 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C2B95813E81E6F8054CA6DDD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2F47B97E4F09379792387FB0 /* Pods-Doviz.debug.xcconfig */,
+				2F599E0E79AAFA5EE03E3329 /* Pods-Doviz.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -111,9 +136,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3604BF422BD1D4B00D8931D /* Build configuration list for PBXNativeTarget "Doviz" */;
 			buildPhases = (
+				DF9179699B1320092DCE7377 /* [CP] Check Pods Manifest.lock */,
 				B3604BDE22BD1D4800D8931D /* Sources */,
 				B3604BDF22BD1D4800D8931D /* Frameworks */,
 				B3604BE022BD1D4800D8931D /* Resources */,
+				879B58DD03BB968183D17574 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -172,6 +199,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		879B58DD03BB968183D17574 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Doviz/Pods-Doviz-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Doviz/Pods-Doviz-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Doviz/Pods-Doviz-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF9179699B1320092DCE7377 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Doviz-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B3604BDE22BD1D4800D8931D /* Sources */ = {
@@ -328,6 +397,7 @@
 		};
 		B3604BF522BD1D4B00D8931D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F47B97E4F09379792387FB0 /* Pods-Doviz.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -348,6 +418,7 @@
 		};
 		B3604BF622BD1D4B00D8931D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F599E0E79AAFA5EE03E3329 /* Pods-Doviz.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
