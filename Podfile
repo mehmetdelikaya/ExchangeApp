@@ -6,5 +6,6 @@ target 'Doviz' do
   use_frameworks!
 
   # Pods for Doviz
-  pod 'Alamofire', '~> 4.8.2'
+pod 'Alamofire', '~> 4.8.2'
+
 end
